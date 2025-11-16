@@ -1,90 +1,138 @@
-/* style.css - tema pink + putih, font Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* ------------------------------ */
+/*  GLOBAL STYLE (PINK AESTHETIC) */
+/* ------------------------------ */
 
-:root{
-  --bg: #fff5f7;
-  --pink-1: #f7c6cf;
-  --pink-2: #f08ea7;
-  --accent: #e66b89;
-  --text: #3a2f2f;
-  --muted: #7a6565;
-  --card: #ffffff;
-  --glass: rgba(255,255,255,0.75);
+:root {
+    --pink: #f8c8dc;
+    --pink-soft: #ffe6f2;
+    --pink-strong: #e96fa0;
+    --white: #ffffff;
+    --text: #444;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg,var(--bg),#fff);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+/* Page background */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--pink-soft);
+    color: var(--text);
 }
 
-/* header */
-.header{
-  background:linear-gradient(135deg,var(--pink-1),var(--pink-2));
-  padding:28px 20px;
-  display:flex;
-  align-items:center;
-  gap:18px;
-  border-bottom-left-radius:24px;
-  border-bottom-right-radius:24px;
-  box-shadow:0 8px 30px rgba(224,150,170,0.12);
+/* ------------------------------ */
+/*   MULTI PAGE CONTAINER STYLE   */
+/* ------------------------------ */
+
+.page {
+    display: none;
+    padding: 40px 25px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: var(--white);
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 22px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
 }
-.header .brand{
-  display:flex;
-  gap:14px;
-  align-items:center;
+
+.page.active {
+    display: block;
 }
-.brand img{width:68px;height:68px;object-fit:contain;border-radius:50%;background:linear-gradient(45deg,#fff6f8,rgba(255,255,255,0.6))}
-.brand h1{margin:0;font-size:1.35rem;color:#fff;letter-spacing:0.6px}
-.header .cta{margin-left:auto}
-.btn{
-  display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;border:none;
+
+/* ------------------------------ */
+/*           TYPOGRAPHY           */
+/* ------------------------------ */
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--pink-strong);
 }
-.btn-primary{background:#fff;color:var(--pink-2)}
-.btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.22);color:#fff}
 
-/* container */
-.container{max-width:1100px;margin:28px auto;padding:0 18px}
-
-/* services grid */
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{
-  background:var(--card);padding:16px;border-radius:14px;box-shadow:0 10px 22px rgba(58,47,47,0.05);
-  border-left:6px solid var(--accent);cursor:pointer;transition:transform .18s,box-shadow .18s;
+.subtitle {
+    font-size: 18px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 15px;
 }
-.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(58,47,47,0.09)}
-.card h3{margin:0 0 6px;color:var(--pink-2)}
-.card p{margin:0;color:var(--muted);font-size:0.95rem}
 
-/* detail panel */
-.detail-panel{display:none;margin-top:22px}
-.panel{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 12px 28px rgba(58,47,47,0.06)}
-.panel h2{margin:0;color:var(--pink-2)}
-.muted{color:var(--muted)}
+/* ------------------------------ */
+/*          IMAGE SECTION         */
+/* ------------------------------ */
 
-/* table style */
-.table-wrap{margin-top:12px;overflow:auto}
-table{width:100%;border-collapse:collapse;min-width:480px}
-th,td{padding:10px;border:1px solid #f1e2e7;text-align:left}
-th{background:var(--pink-2);color:#fff;font-weight:600}
+.image-box {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
 
-/* aside actions */
-.actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-.contact-btn{padding:10px 14px;border-radius:10px;text-decoration:none;color:#fff;font-weight:700}
-.wa{background:#25D366}
-.ig{background:linear-gradient(45deg,#e95950,#bc2a8d)}
+.image-box img {
+    width: 230px;
+    border-radius: 18px;
+    box-shadow: 0 7px 14px rgba(0,0,0,0.12);
+}
 
-/* footer */
-footer{margin:40px 0;text-align:center;color:var(--muted);font-size:0.95rem}
+/* ------------------------------ */
+/*             BUTTONS            */
+/* ------------------------------ */
 
-/* responsive */
-@media (max-width:880px){
-  .header{flex-direction:column;align-items:flex-start;padding:18px}
-  .brand img{width:60px;height:60px}
-  .header .cta{width:100%}
+.btn-wrap {
+    margin-top: 30px;
+    text-align: center;
+}
+
+button {
+    padding: 12px 26px;
+    border: none;
+    outline: none;
+    border-radius: 35px;
+    background: var(--pink-strong);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.85;
+    transform: scale(1.02);
+}
+
+/* ------------------------------ */
+/*             CARDS              */
+/* ------------------------------ */
+
+.card {
+    background: var(--pink-soft);
+    padding: 20px 18px;
+    border-radius: 16px;
+    margin: 18px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ------------------------------ */
+/*       NAVIGATION DOTS          */
+/*  (Optional - bisa dipakai)     */
+/* ------------------------------ */
+
+.nav-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ffd6e8;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: var(--pink-strong);
 }
