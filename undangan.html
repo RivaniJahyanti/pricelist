@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VANI — Surat Undangan</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand"><img src="assets/img/logo.png" alt="logo"><div><h1>Surat Undangan</h1><div class="muted">Cetak & Digital</div></div></div>
+    <div class="cta"><a class="btn btn-primary" href="index.html">Kembali</a></div>
+  </header>
+
+  <main class="container">
+    <section><div class="panel" id="detailContent"></div></section>
+    <footer>© 2025 VANI CREATIVE HUB</footer>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const PRICE_DATA = {
+      "Surat Undangan": {
+        desc:"Undangan cetak (min.50 pcs) dan undangan digital",
+        items:[
+          { title:"Softcover (min.50pcs)", durations:[{d:"per pcs",p:"Rp 100 / pcs"}] },
+          { title:"Hardcover (min.50pcs)", durations:[{d:"per pcs",p:"Rp 250 / pcs"}] },
+          { title:"Digital", durations:[{d:"-",p:"Rp 50.000"}] }
+        ]
+      }
+    };
+    renderPrices("Surat Undangan");
+  </script>
+</body>
+</html>
