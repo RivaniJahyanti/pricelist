@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VANI — Dashboard & Data Visualization</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand"><img src="assets/img/logo.png" alt="logo"><div><h1>Dashboard & Data Visualization</h1><div class="muted">Tableau • Looker Studio • Streamlit</div></div></div>
+    <div class="cta"><a class="btn btn-primary" href="index.html">Kembali</a></div>
+  </header>
+
+  <main class="container">
+    <section><div class="panel" id="detailContent"></div></section>
+    <footer>© 2025 VANI CREATIVE HUB</footer>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const PRICE_DATA = {
+      "Dashboard & Data Visualization": {
+        desc:"Pilih Basic atau Complex — durasi & harga tertera di bawah.",
+        items:[
+          { title:"Basic Dashboard - Looker Studio", durations:[{d:"8 hari",p:"Rp 70.000"},{d:"6 hari",p:"Rp 90.000"},{d:"4 hari",p:"Rp 110.000"}] },
+          { title:"Basic Dashboard - Tableau", durations:[{d:"8 hari",p:"Rp 90.000"},{d:"6 hari",p:"Rp 120.000"},{d:"4 hari",p:"Rp 140.000"}] },
+          { title:"Basic Dashboard - Streamlit", durations:[{d:"8 hari",p:"Rp 140.000"},{d:"6 hari",p:"Rp 180.000"},{d:"4 hari",p:"Rp 220.000"}] },
+          { title:"Complex Dashboard - Streamlit (4 minggu)", durations:[{d:"4 minggu",p:"Rp 380.000"}] },
+          { title:"Complex Dashboard - Streamlit (3 minggu)", durations:[{d:"3 minggu",p:"Rp 480.000"}] },
+          { title:"Complex Dashboard - Streamlit (2 minggu)", durations:[{d:"2 minggu",p:"Rp 600.000"}] }
+        ]
+      }
+    };
+    renderPrices("Dashboard & Data Visualization");
+  </script>
+</body>
+</html>
