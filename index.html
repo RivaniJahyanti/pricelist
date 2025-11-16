@@ -4,66 +4,83 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>VANI CREATIVE HUB — Layanan</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header class="header">
     <div class="brand">
       <img src="assets/img/logo.png" alt="Vani Creative Hub logo">
       <div>
         <h1>VANI CREATIVE HUB</h1>
-        <div style="color:#fff;font-size:0.95rem">Olah Data • Machine Learning • Desain • Undangan • Dashboard</div>
+        <div style="color:#fff;font-size:0.92rem">
+          Olah Data • Machine Learning • Desain • Undangan • Dashboard
+        </div>
       </div>
     </div>
+
     <div class="cta">
       <a class="btn btn-primary" href="desain.html">Lihat Harga & Pesan</a>
       <a class="btn btn-outline" href="dashboard.html" style="margin-left:8px">Lihat Dashboard</a>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
     <section>
       <h2 style="color:#3a2f2f;margin:0">Layanan yang Kami Sediakan</h2>
-      <p class="muted" style="margin:6px 0 14px">Klik kartu untuk melihat detail harga dan durasi pengerjaan setiap layanan.</p>
+      <p class="muted" style="margin:6px 0 18px">
+        Klik layanan untuk melihat detail harga dan durasi pengerjaan.
+      </p>
+
+      <!-- SERVICES GRID -->
       <div id="services" class="services"></div>
     </section>
 
     <footer>
-      © 2025 VANI CREATIVE HUB · <a href="mailto:vanicreativehub@example.com">vanicreativehub@example.com</a>
+      © 2025 VANI CREATIVE HUB · 
+      <a href="mailto:vanicreativehub@example.com">vanicreativehub@example.com</a>
     </footer>
   </main>
 
+  <!-- JS -->
   <script src="assets/js/main.js"></script>
   <script>
-    // small dataset for index cards only (desc shown in cards)
+    // DATA KARTU (untuk index)
     const CARD_DATA = {
-  "Desain Kreatif": {
-    img: "assets/img/desain.png",
-    desc: "Desain menu, poster, posting IG, presentasi"
-  },
-  "Olah Data & Analisis": {
-    img: "assets/img/oldata.png",
-    desc: "Statistik, regresi, PCA, uji validitas"
-  },
-  "Machine Learning & AI Modeling": {
-    img: "assets/img/ml.png",
-    desc: "SVM, ANN, CNN, deployment Streamlit"
-  },
-  "Dashboard & Data Visualization": {
-    img: "assets/img/dashboard.png",
-    desc: "Tableau, Looker Studio, Streamlit"
-  },
-  "Surat Undangan": {
-    img: "assets/img/undangan.png",
-    desc: "Undangan cetak & digital"
-  },
-  "Souvenir Pernikahan": {
-    img: "assets/img/souvenir.png",
-    desc: "Gantungan kunci, goodie bag"
-  }
-};
+      "Desain Kreatif": {
+        img: "assets/img/desain.png",
+        desc: "Desain menu, poster, posting IG, presentasi"
+      },
+      "Olah Data & Analisis": {
+        img: "assets/img/oldata.png",
+        desc: "Statistik, regresi, PCA, uji validitas"
+      },
+      "Machine Learning & AI Modeling": {
+        img: "assets/img/ml.png",
+        desc: "SVM, ANN, CNN, deployment Streamlit"
+      },
+      "Dashboard & Data Visualization": {
+        img: "assets/img/dashboard.png",
+        desc: "Tableau, Looker Studio, Streamlit"
+      },
+      "Surat Undangan": {
+        img: "assets/img/undangan.png",
+        desc: "Undangan cetak & digital"
+      },
+      "Souvenir Pernikahan": {
+        img: "assets/img/souvenir.png",
+        desc: "Gantungan kunci, goodie bag"
+      }
+    };
 
+    // Panggil fungsi render
     initServices(CARD_DATA);
   </script>
+
 </body>
 </html>
