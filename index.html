@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VANI CREATIVE HUB — Layanan</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img src="assets/img/logo.png" alt="Vani Creative Hub logo">
+      <div>
+        <h1>VANI CREATIVE HUB</h1>
+        <div style="color:#fff;font-size:0.95rem">Olah Data • Machine Learning • Desain • Undangan • Dashboard</div>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="desain.html">Lihat Harga & Pesan</a>
+      <a class="btn btn-outline" href="dashboard.html" style="margin-left:8px">Lihat Dashboard</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 style="color:#3a2f2f;margin:0">Layanan yang Kami Sediakan</h2>
+      <p class="muted" style="margin:6px 0 14px">Klik kartu untuk melihat detail harga dan durasi pengerjaan setiap layanan.</p>
+      <div id="services" class="services"></div>
+    </section>
+
+    <footer>
+      © 2025 VANI CREATIVE HUB · <a href="mailto:vanicreativehub@example.com">vanicreativehub@example.com</a>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // small dataset for index cards only (desc shown in cards)
+    const CARD_DATA = {
+      "Desain Kreatif": {desc:"Desain menu, poster, posting IG, presentasi"},
+      "Olah Data & Analisis": {desc:"Statistik, regresi, PCA, uji validitas"},
+      "Machine Learning & AI Modeling": {desc:"SVM, ANN, CNN, deployment Streamlit"},
+      "Dashboard & Data Visualization": {desc:"Tableau, Looker Studio, Streamlit"},
+      "Surat Undangan": {desc:"Undangan cetak & digital"},
+      "Souvenir Pernikahan": {desc:"Gantungan kunci, goodie bag"}
+    };
+    initServices(CARD_DATA);
+  </script>
+</body>
+</html>
