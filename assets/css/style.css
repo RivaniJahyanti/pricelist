@@ -1,6 +1,6 @@
-/* ------------------------------ */
-/*  GLOBAL STYLE (PINK AESTHETIC) */
-/* ------------------------------ */
+/* ---------------------------------- */
+/*            GLOBAL STYLE            */
+/* ---------------------------------- */
 
 :root {
     --pink: #f8c8dc;
@@ -10,56 +10,68 @@
     --text: #444;
 }
 
-/* Page background */
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background: var(--pink-soft);
     color: var(--text);
+    padding: 20px 0;
 }
 
-/* ------------------------------ */
-/*   MULTI PAGE CONTAINER STYLE   */
-/* ------------------------------ */
+/* ---------------------------------- */
+/*        MULTI PAGE CONTAINER        */
+/* ---------------------------------- */
 
 .page {
     display: none;
-    padding: 40px 25px;
-    min-height: 100vh;
-    box-sizing: border-box;
-    background: var(--white);
-    max-width: 480px;
+    max-width: 500px;
     margin: 0 auto;
-    border-radius: 22px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    padding: 40px 25px;
+    background: var(--white);
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.08);
+    animation: fadeIn 0.4s ease;
 }
 
 .page.active {
     display: block;
 }
 
-/* ------------------------------ */
-/*           TYPOGRAPHY           */
-/* ------------------------------ */
+/* Smooth Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------- */
+/*              TEXT STYLE            */
+/* ---------------------------------- */
 
 .title {
     font-size: 28px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: var(--pink-strong);
 }
 
 .subtitle {
-    font-size: 18px;
+    font-size: 17px;
     text-align: center;
-    color: #555;
-    margin-bottom: 15px;
+    color: #666;
+    margin-bottom: 22px;
+    line-height: 1.4;
 }
 
-/* ------------------------------ */
-/*          IMAGE SECTION         */
-/* ------------------------------ */
+/* ---------------------------------- */
+/*              IMAGES                */
+/* ---------------------------------- */
 
 .image-box {
     display: flex;
@@ -69,70 +81,76 @@ body {
 
 .image-box img {
     width: 230px;
-    border-radius: 18px;
-    box-shadow: 0 7px 14px rgba(0,0,0,0.12);
-}
-
-/* ------------------------------ */
-/*             BUTTONS            */
-/* ------------------------------ */
-
-.btn-wrap {
-    margin-top: 30px;
-    text-align: center;
-}
-
-button {
-    padding: 12px 26px;
-    border: none;
-    outline: none;
-    border-radius: 35px;
-    background: var(--pink-strong);
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
+    border-radius: 22px;
+    box-shadow: 0 7px 16px rgba(0,0,0,0.12);
     transition: 0.3s ease;
 }
 
-button:hover {
-    opacity: 0.85;
-    transform: scale(1.02);
+.image-box img:hover {
+    transform: scale(1.03);
 }
 
-/* ------------------------------ */
-/*             CARDS              */
-/* ------------------------------ */
+/* ---------------------------------- */
+/*               BUTTONS              */
+/* ---------------------------------- */
+
+.btn-wrap {
+    text-align: center;
+    margin-top: 32px;
+}
+
+button {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 35px;
+    background: var(--pink-strong);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background: #d85c90;
+    transform: scale(1.05);
+}
+
+/* ---------------------------------- */
+/*                CARDS               */
+/* ---------------------------------- */
 
 .card {
     background: var(--pink-soft);
     padding: 20px 18px;
-    border-radius: 16px;
+    border-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
     margin: 18px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.65;
+    border-left: 5px solid var(--pink-strong);
 }
 
-/* ------------------------------ */
-/*       NAVIGATION DOTS          */
-/*  (Optional - bisa dipakai)     */
-/* ------------------------------ */
+/* ---------------------------------- */
+/*           NAVIGATION DOTS          */
+/* ---------------------------------- */
 
 .nav-dots {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
     gap: 8px;
+    margin-top: 22px;
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     background: #ffd6e8;
     border-radius: 50%;
+    transition: 0.25s ease;
 }
 
 .dot.active {
     background: var(--pink-strong);
+    transform: scale(1.2);
 }
