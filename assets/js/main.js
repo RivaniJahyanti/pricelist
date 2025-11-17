@@ -23,7 +23,7 @@ function navigateTo(key){
   // mapping key -> page url
   const map = {
     'DESAIN KREATIF':'desain.html',
-    'OLAH DATA & ANALISI':'olahdata.html',
+    'OLAH DATA & ANALISIS':'olahdata.html',
     'MACHINE LEARNING':'ml.html',
     'DASHBOARD & DATA VISUALIZATION':'dashboard.html',
     'SURAT UNDANGAN':'undangan.html',
