@@ -25,7 +25,7 @@ function navigateTo(key){
     'DESAIN KREATIF':'desain.html',
     'OLAH DATA & ANALISIS':'olahdata.html',
     'MACHINE LEARNING':'ml.html',
-    'DASHBOARD & DATA VISUALIZATION':'dashboard.html',
+    'WEBSITE & DASHBOARD':'dashboard.html',
     'SURAT UNDANGAN':'undangan.html',
     'SOUVENIR PERNIKAHAN':'souvenir.html'
   };
