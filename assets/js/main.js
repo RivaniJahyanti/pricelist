@@ -22,12 +22,12 @@ function initServices(DATA){
 function navigateTo(key){
   // mapping key -> page url
   const map = {
-    'Desain Kreatif':'desain.html',
-    'Olah Data & Analisis':'olahdata.html',
-    'Machine Learning & AI Modeling':'ml.html',
-    'Dashboard & Data Visualization':'dashboard.html',
-    'Surat Undangan':'undangan.html',
-    'Souvenir Pernikahan':'souvenir.html'
+    'DESAIN KREATIF':'desain.html',
+    'OLAH DATA & ANALISI':'olahdata.html',
+    'MACHINE LEARNING':'ml.html',
+    'DASHBOARD & DATA VISUALIZATION':'dashboard.html',
+    'SURAT UNDANGAN':'undangan.html',
+    'SOUVENIR PERNIKAHAN':'souvenir.html'
   };
   const url = map[key] || 'index.html';
   window.location.href = url;
