@@ -32,39 +32,82 @@
         desc: "Pilih layanan: Website (Basic/Complex) atau Dashboard (Basic/Complex) — durasi & harga tertera di bawah.",
         items: [
           // WEBSITE
-          { title: "Basic Website", durations:[
+          { title: "Basic Website",
+            desc: `<ul>
+                     <li>Single-page</li>
+                     <li>Layout responsif</li>
+                     <li>Navigasi sederhana</li>
+                     <li>Interaktivitas dasar dengan JavaScript</li>
+                   </ul>`,
+            durations:[
               {d:"8 hari", p:"Rp 160.000"},
               {d:"6 hari", p:"Rp 180.000"},
               {d:"4 hari", p:"Rp 200.000"}
             ] 
           },
-          { title: "Complex Website", durations:[
+          { title: "Complex Website",
+            desc: `<ul>
+                     <li>Multi-page</li>
+                     <li>Layout responsif & custom</li>
+                     <li>Navigasi kompleks</li>
+                     <li>Interaktivitas tinggi dengan JavaScript (animasi)</li>
+                   </ul>`,
+            durations:[
               {d:"4 minggu", p:"Rp 350.000"},
               {d:"3 minggu", p:"Rp 450.000"},
               {d:"2 minggu", p:"Rp 600.000"}
             ]
           },
           // BASIC DASHBOARD
-          { title: "Basic Dashboard - Looker Studio", durations:[
+          { title: "Basic Dashboard - Looker Studio",
+            desc: `<ul>
+                     <li>Grafik sederhana</li>
+                     <li>KPI</li>
+                     <li>Filter dasar</li>
+                     <li>Satu halaman dashboard</li>
+                   </ul>`,
+            durations:[
               {d:"8 hari", p:"Rp 70.000"},
               {d:"6 hari", p:"Rp 90.000"},
               {d:"4 hari", p:"Rp 110.000"}
             ]
           },
-          { title: "Basic Dashboard - Tableau", durations:[
+          { title: "Basic Dashboard - Tableau",
+            desc: `<ul>
+                     <li>Grafik sederhana</li>
+                     <li>KPI</li>
+                     <li>Filter dasar</li>
+                     <li>Satu halaman dashboard</li>
+                   </ul>`,
+            durations:[
               {d:"8 hari", p:"Rp 90.000"},
               {d:"6 hari", p:"Rp 120.000"},
               {d:"4 hari", p:"Rp 140.000"}
             ]
           },
-          { title: "Basic Dashboard - Streamlit", durations:[
+          { title: "Basic Dashboard - Streamlit",
+            desc: `<ul>
+                     <li>Grafik sederhana</li>
+                     <li>KPI</li>
+                     <li>Filter dasar</li>
+                     <li>Satu halaman dashboard</li>
+                   </ul>`,
+            durations:[
               {d:"8 hari", p:"Rp 140.000"},
               {d:"6 hari", p:"Rp 180.000"},
               {d:"4 hari", p:"Rp 220.000"}
             ]
           },
           // COMPLEX DASHBOARD
-          { title: "Complex Dashboard - Streamlit", durations:[
+          { title: "Complex Dashboard - Streamlit",
+            desc: `<ul>
+                     <li>Multi-page</li>
+                     <li>API otomatis</li>
+                     <li>Auto-update data</li>
+                     <li>Integrasi Machine Learning</li>
+                     <li>Visualisasi interaktif & custom</li>
+                   </ul>`,
+            durations:[
               {d:"4 minggu", p:"Rp 480.000"},
               {d:"3 minggu", p:"Rp 580.000"},
               {d:"2 minggu", p:"Rp 700.000"}
@@ -79,7 +122,7 @@
       const data = PRICE_DATA[category];
       let html = `<h2>${category}</h2><p>${data.desc}</p>`;
       data.items.forEach(item => {
-        html += `<h3>${item.title}</h3><table><tr><th>Durasi</th><th>Harga</th></tr>`;
+        html += `<h3>${item.title}</h3>${item.desc}<table><tr><th>Durasi</th><th>Harga</th></tr>`;
         item.durations.forEach(d => {
           html += `<tr><td>${d.d}</td><td>${d.p}</td></tr>`;
         });
