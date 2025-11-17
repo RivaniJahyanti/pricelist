@@ -116,21 +116,6 @@
         ]
       }
     };
-
-    function renderPrices(category){
-      const container = document.getElementById("detailContent");
-      const data = PRICE_DATA[category];
-      let html = `<h2>${category}</h2><p>${data.desc}</p>`;
-      data.items.forEach(item => {
-        html += `<h3>${item.title}</h3>${item.desc}<table><tr><th>Durasi</th><th>Harga</th></tr>`;
-        item.durations.forEach(d => {
-          html += `<tr><td>${d.d}</td><td>${d.p}</td></tr>`;
-        });
-        html += `</table>`;
-      });
-      container.innerHTML = html;
-    }
-
     renderPrices("Website & Dashboard");
   </script>
 </body>
