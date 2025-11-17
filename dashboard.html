@@ -27,11 +27,13 @@
 
   <script src="assets/js/main.js"></script>
   <script>
+    const PHONE = '6283163825232'; // WA
+    const IG = 'vanicreativehub';   // Instagram
+
     const PRICE_DATA = {
       "Website & Dashboard": {
         desc: "Pilih layanan: Website (Basic/Complex) atau Dashboard (Basic/Complex) — durasi & harga tertera di bawah.",
         items: [
-          // WEBSITE
           { title: "Basic Website",
             desc: `<ul>
                      <li>Single-page</li>
@@ -58,7 +60,6 @@
               {d:"2 minggu", p:"Rp 600.000"}
             ]
           },
-          // BASIC DASHBOARD
           { title: "Basic Dashboard - Looker Studio",
             desc: `<ul>
                      <li>Grafik sederhana</li>
@@ -98,7 +99,6 @@
               {d:"4 hari", p:"Rp 220.000"}
             ]
           },
-          // COMPLEX DASHBOARD
           { title: "Complex Dashboard - Streamlit",
             desc: `<ul>
                      <li>Multi-page</li>
@@ -116,6 +116,30 @@
         ]
       }
     };
+
+    function renderPrices(category){
+      const container = document.getElementById("detailContent");
+      const data = PRICE_DATA[category];
+      let html = `<h2>${category}</h2><p>${data.desc}</p>`;
+      data.items.forEach(item => {
+        html += `<h3 style="margin-top:16px;color:#c95d7a">${item.title}</h3>${item.desc}<table><tr><th>Durasi</th><th>Harga</th></tr>`;
+        item.durations.forEach(d => {
+          html += `<tr><td>${d.d}</td><td>${d.p}</td></tr>`;
+        });
+        html += `</table>`;
+      });
+
+      // Tambahkan tombol WA & IG di bawah tabel
+      const waText = encodeURIComponent(`Halo kak, saya mau konsultasi terkait ${category}. Mohon info harga & prosedur.`);
+      html += `
+        <div class="actions" style="margin-top:20px;">
+          <a class="contact-btn wa" target="_blank" href="https://wa.me/${PHONE}?text=${waText}">Chat WhatsApp</a>
+          <a class="contact-btn ig" target="_blank" href="https://instagram.com/${IG}">Instagram</a>
+        </div>
+      `;
+      container.innerHTML = html;
+    }
+
     renderPrices("Website & Dashboard");
   </script>
 </body>
