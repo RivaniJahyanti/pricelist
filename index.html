@@ -1,47 +1,55 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>VANI CREATIVE HUB — Layanan</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VANI CREATIVE HUB — Layanan</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="header">
-    <div class="brand">
-      <img src="assets/img/logo.jpg" alt="Vani Creative Hub logo">
-      <div>
-        <h1>VANI CREATIVE HUB</h1>
-        <div style="color:#fff;font-size:0.95rem">Desain Kreatif • Olah Data & Analisis • Machine Learning • Dashboard & Data Visualization • Surat Undangan • Souvenir Pernikahan</div>
-      </div>
-    </div>
-    </div>
-  </header>
+  <header class="header">
+    <div class="brand">
+      <img src="assets/img/logo.jpg" alt="Vani Creative Hub logo">
+      <div>
+        <h1>VANI CREATIVE HUB</h1>
+        <div style="color:#fff;font-size:0.95rem">Desain Kreatif • Olah Data & Analisis • Machine Learning • Dashboard & Data Visualization • Surat Undangan • Souvenir Pernikahan</div>
+      </div>
+    </div>
+    </div>
+  </header>
 
-  <main class="container">
-    <section>
-      <h2 style="color:#3a2f2f;margin:0">Layanan yang Kami Sediakan</h2>
-      <p class="muted" style="margin:6px 0 14px">Klik kartu untuk melihat detail harga dan durasi pengerjaan setiap layanan.</p>
-      <div id="services" class="services"></div>
-    </section>
+  <main class="container">
+    <section>
+      <h2 style="color:#3a2f2f;margin:0">Layanan yang Kami Sediakan</h2>
+      <p class="muted" style="margin:6px 0 14px">Klik kartu untuk melihat detail harga dan durasi pengerjaan setiap layanan.</p>
+      <div id="services" class="services"></div>
+    </section>
 
-    <footer>
-      © 2025 VANI CREATIVE HUB </a>
-    </footer>
-  </main>
+    <footer>
+      © 2025 VANI CREATIVE HUB </a>
+    </footer>
+  </main>
 
-  <script src="assets/js/main.js"></script>
-  <script>
-    // small dataset for index cards only (desc shown in cards)
-    const CARD_DATA = {
-      "DESAIN KREATIF": {desc:"• Desain Menu Kafe / Restoran, poster\n• Desain Opening / Event\n• Desain PowerPoint"},
-      "OLAH DATA & ANALISIS": {desc:"• Statistik Dasar\n• Validitas & Reliabilitas\n• Korelasi & Regresi Sederhana\n• Regresi Berganda\n• PCA"},
-      "MACHINE LEARNING": {desc:"• Data Preparation\n• Statistical & Classical ML Models\n• Machine Learning Modeling\n• Dokumentasi & Output"},
-      "DASHBOARD & DATA VISUALIZATION": {desc:"TOOLS:\n• Tableau\n• Looker Studio\n• Streamlit"},
-      "SURAT UNDANGAN": {desc:"• Softcover\n• Hardcover\n• Digital"},
-      "SOUVENIR PERNIKAHAN ": {desc:"• Gantungan Kunci Kawat Bulu"}
-    };
-    initServices(CARD_DATA);
-  </script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // small dataset for index cards only (desc shown in cards)
+    // Mengganti \n dengan <br> agar baris baru terbentuk di tampilan HTML
+    const CARD_DATA = {
+      "DESAIN KREATIF": {desc:"• Desain Menu Kafe / Restoran, poster<br>• Desain Opening / Event<br>• Desain PowerPoint"},
+      "OLAH DATA & ANALISIS": {desc:"• Statistik Dasar<br>• Validitas & Reliabilitas<br>• Korelasi & Regresi Sederhana<br>• Regresi Berganda<br>• PCA"},
+      "MACHINE LEARNING": {desc:"• Data Preparation<br>• Statistical & Classical ML Models<br>• Machine Learning Modeling<br>• Dokumentasi & Output"},
+      "DASHBOARD & DATA VISUALIZATION": {desc:"TOOLS:<br>• Tableau<br>• Looker Studio<br>• Streamlit"},
+      "SURAT UNDANGAN": {desc:"• Softcover<br>• Hardcover<br>• Digital"},
+      "SOUVENIR PERNIKAHAN ": {desc:"• Gantungan Kunci Kawat Bulu"}
+    };
+    
+    // Pastikan fungsi initServices() ada dan bekerja di main.js
+    // Fungsi ini yang akan mengambil data di atas dan membuat kartu HTML
+    if (typeof initServices === 'function') {
+      initServices(CARD_DATA);
+    } else {
+      console.error("Error: Fungsi initServices() tidak ditemukan. Pastikan file assets/js/main.js sudah dimuat.");
+    }
+  </script>
 </body>
 </html>
