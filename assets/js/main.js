@@ -54,11 +54,13 @@ function renderPrices(categoryKey){
     `;
 
     // **DESC ITEM DIMUNCULKAN**
+    if (item.desc) {
     html += `
       <div class="item-desc" style="margin-bottom:8px;">
         ${item.desc}
       </div>
     `;
+    }
 
     // tabel
     html += `
