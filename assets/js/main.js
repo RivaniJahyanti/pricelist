@@ -1,24 +1,38 @@
-// main.js - meng-handle rendering multi-page links & WA message
-// phone and ig config
-const PHONE = '6283163825232'; 
+// ===============================
+// CONFIG
+// ===============================
+const PHONE = '6283163825232';
 const IG = 'vanicreativehub';
 
-// Load service cards on pages that include element with id="services"
+// ===============================
+// LOAD SERVICE CARDS
+// ===============================
 function initServices(DATA){
   const servicesEl = document.getElementById('services');
   if(!servicesEl) return;
-  Object.keys(DATA).forEach(key=>{
+
+  Object.keys(DATA).forEach(key => {
     const card = document.createElement('div');
-    card.className='card';
-    card.tabIndex=0;
-    card.innerHTML = `<h3>${key}</h3><p class="muted">${DATA[key].desc}</p>`;
-    card.addEventListener('click',()=>navigateTo(key));
-    card.addEventListener('keypress',(e)=>{ if(e.key==='Enter') navigateTo(key) });
+    card.className = 'card';
+    card.tabIndex = 0;
+
+    card.innerHTML = `
+      <h3>${key}</h3>
+      <p class="muted">${DATA[key].desc || ""}</p>
+    `;
+
+    card.addEventListener('click', () => navigateTo(key));
+    card.addEventListener('keypress', e => {
+      if(e.key === 'Enter') navigateTo(key);
+    });
+
     servicesEl.appendChild(card);
   });
 }
 
-// navigate to page (multi-page: open respective html)
+// ===============================
+// NAVIGATION MAP
+// ===============================
 function navigateTo(key){
   const map = {
     'DESAIN KREATIF':'desain.html',
@@ -28,11 +42,13 @@ function navigateTo(key){
     'SURAT UNDANGAN':'undangan.html',
     'SOUVENIR PERNIKAHAN':'souvenir.html'
   };
-  const url = map[key] || 'index.html';
-  window.location.href = url;
+
+  window.location.href = map[key] || 'index.html';
 }
 
-// RENDER DETAIL PAGE — sudah diperbaiki agar DESC item muncul
+// ===============================
+// RENDER DETAIL PAGE
+// ===============================
 function renderPrices(categoryKey){
   const data = PRICE_DATA && PRICE_DATA[categoryKey];
   if(!data) return;
@@ -40,42 +56,48 @@ function renderPrices(categoryKey){
   const el = document.getElementById('detailContent');
   if(!el) return;
 
-  // header kategori
+  // Header
   let html = `
     <h2>${categoryKey}</h2>
-    <p class="muted">${data.desc}</p>
+    <p class="muted">${data.desc || ""}</p>
   `;
 
-  // item
+  // Kolom durasi harus kosong di kategori ini
+  const emptyDurationCategories = ["SOUVENIR PERNIKAHAN", "SURAT UNDANGAN"];
+  const emptyDurationHeader = emptyDurationCategories.includes(categoryKey) ? "" : "Durasi";
+
+  // Render item
   data.items.forEach(item => {
-    // judul item
     html += `
       <h3 style="margin-top:16px;color:#c95d7a">${item.title}</h3>
     `;
 
-    // **DESC ITEM DIMUNCULKAN**
-    if (item.desc) {
-    html += `
-      <div class="item-desc" style="margin-bottom:8px;">
-        ${item.desc}
-      </div>
-    `;
+    if(item.desc){
+      html += `
+        <div class="item-desc" style="margin-bottom:8px;">
+          ${item.desc}
+        </div>
+      `;
     }
 
-    // tabel
+    // Table header
     html += `
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Durasi</th><th>Harga</th></tr>
+            <tr>
+              <th>${emptyDurationHeader}</th>
+              <th>Harga</th>
+            </tr>
           </thead>
           <tbody>
     `;
 
+    // Isi tabel
     item.durations.forEach(d => {
       html += `
         <tr>
-          <td>${d.d}</td>
+          <td>${emptyDurationHeader ? d.d : ""}</td>
           <td>${d.p}</td>
         </tr>
       `;
@@ -88,25 +110,26 @@ function renderPrices(categoryKey){
     `;
   });
 
-  // contact buttons
+  // WhatsApp text
   const waText = encodeURIComponent(
-    `Halo kak, saya tertarik dengan layanan ${categoryKey}. 
-Saya ingin bertanya terkait proses pengerjaan dan apa saja yang perlu saya siapkan 
+`Halo kak, saya tertarik dengan layanan ${categoryKey}.
+Saya ingin bertanya terkait proses pengerjaan dan apa saja yang perlu saya siapkan
 untuk membuat layanan tersebut sesuai kebutuhan saya, yaitu:
 
-- Jenis Layanan yang saya inginkan: ……………………………….
+- Jenis layanan yang saya inginkan: ……………………………….
 - Durasi pengerjaan yang saya pilih: ……………………………….
 
-Mohon bantuannya ya kak.
-`
+Mohon bantuannya ya kak.`
   );
 
+  // Contact buttons
   html += `
     <div class="actions">
       <a class="contact-btn wa" target="_blank"
          href="https://wa.me/${PHONE}?text=${waText}">
          Chat WhatsApp
       </a>
+
       <a class="contact-btn ig" target="_blank"
          href="https://instagram.com/${IG}">
          Instagram
@@ -117,7 +140,9 @@ Mohon bantuannya ya kak.
   el.innerHTML = html;
 }
 
-// back button
+// ===============================
+// BACK BUTTON HANDLER
+// ===============================
 document.addEventListener('click', function(e){
   if(e.target && e.target.matches('#backBtn')){
     e.preventDefault();
