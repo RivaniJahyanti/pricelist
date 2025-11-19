@@ -15,7 +15,9 @@
         <div class="muted">HTML • CSS • JavaScript • Tableau • Looker Studio • Streamlit</div>
       </div>
     </div>
-    <div class="cta"><a class="btn btn-primary" href="index.html">Kembali</a></div>
+    <div class="cta">
+      <a class="btn btn-primary" href="index.html">Kembali</a>
+    </div>
   </header>
 
   <main class="container">
@@ -25,81 +27,91 @@
     <footer>© 2025 VANI CREATIVE HUB</footer>
   </main>
 
+  <!-- main.js selalu harus dipanggil dulu -->
   <script src="assets/js/main.js"></script>
+
+  <!-- script PRICE_DATA + pemanggilan renderPrices -->
   <script>
     const PRICE_DATA = {
       "Website & Dashboard": {
         desc: "Pilih layanan: Website (Basic/Complex) atau Dashboard (Basic/Complex) — durasi & harga tertera di bawah.",
         items: [
-          // WEBSITE
-          { title: "Basic Website",
+          {
+            title: "Basic Website",
             desc: `<ul>
                      <li>Single-page</li>
                      <li>Layout responsif</li>
                      <li>Navigasi sederhana</li>
                      <li>Interaktivitas dasar dengan JavaScript</li>
                    </ul>`,
-            durations:[
-              {d:"8 hari", p:"Rp 160.000"},
-              {d:"6 hari", p:"Rp 180.000"},
-              {d:"4 hari", p:"Rp 200.000"}
-            ] 
+            durations: [
+              { d: "8 hari", p: "Rp 160.000" },
+              { d: "6 hari", p: "Rp 180.000" },
+              { d: "4 hari", p: "Rp 200.000" }
+            ]
           },
-          { title: "Complex Website",
+          {
+            title: "Complex Website",
             desc: `<ul>
                      <li>Multi-page</li>
                      <li>Layout responsif & custom</li>
                      <li>Navigasi kompleks</li>
                      <li>Interaktivitas tinggi dengan JavaScript (animasi)</li>
                    </ul>`,
-            durations:[
-              {d:"4 minggu", p:"Rp 350.000"},
-              {d:"3 minggu", p:"Rp 450.000"},
-              {d:"2 minggu", p:"Rp 600.000"}
+            durations: [
+              { d: "4 minggu", p: "Rp 350.000" },
+              { d: "3 minggu", p: "Rp 450.000" },
+              { d: "2 minggu", p: "Rp 600.000" }
             ]
           },
-          // BASIC DASHBOARD
-          { title: "Basic Dashboard - Looker Studio",
+
+          {
+            title: "Basic Dashboard - Looker Studio",
             desc: `<ul>
                      <li>Grafik sederhana</li>
                      <li>KPI</li>
                      <li>Filter dasar</li>
                      <li>Satu halaman dashboard</li>
                    </ul>`,
-            durations:[
-              {d:"8 hari", p:"Rp 70.000"},
-              {d:"6 hari", p:"Rp 90.000"},
-              {d:"4 hari", p:"Rp 110.000"}
+            durations: [
+              { d: "8 hari", p: "Rp 70.000" },
+              { d: "6 hari", p: "Rp 90.000" },
+              { d: "4 hari", p: "Rp 110.000" }
             ]
           },
-          { title: "Basic Dashboard - Tableau",
+
+          {
+            title: "Basic Dashboard - Tableau",
             desc: `<ul>
                      <li>Grafik sederhana</li>
                      <li>KPI</li>
                      <li>Filter dasar</li>
                      <li>Satu halaman dashboard</li>
                    </ul>`,
-            durations:[
-              {d:"8 hari", p:"Rp 90.000"},
-              {d:"6 hari", p:"Rp 120.000"},
-              {d:"4 hari", p:"Rp 140.000"}
+            durations: [
+              { d: "8 hari", p: "Rp 90.000" },
+              { d: "6 hari", p: "Rp 120.000" },
+              { d: "4 hari", p: "Rp 140.000" }
             ]
           },
-          { title: "Basic Dashboard - Streamlit",
+
+          {
+            title: "Basic Dashboard - Streamlit",
             desc: `<ul>
                      <li>Grafik sederhana</li>
                      <li>KPI</li>
                      <li>Filter dasar</li>
                      <li>Satu halaman dashboard</li>
                    </ul>`,
-            durations:[
-              {d:"8 hari", p:"Rp 140.000"},
-              {d:"6 hari", p:"Rp 180.000"},
-              {d:"4 hari", p:"Rp 220.000"}
+            durations: [
+              { d: "8 hari", p: "Rp 140.000" },
+              { d: "6 hari", p: "Rp 180.000" },
+              { d: "4 hari", p: "Rp 220.000" }
             ]
           },
-          // COMPLEX DASHBOARD
-          { title: "Complex Dashboard - Streamlit",
+
+          {
+            title: "Complex Dashboard - Streamlit",
             desc: `<ul>
                      <li>Multi-page</li>
                      <li>API otomatis</li>
@@ -107,31 +119,19 @@
                      <li>Integrasi Machine Learning</li>
                      <li>Visualisasi interaktif & custom</li>
                    </ul>`,
-            durations:[
-              {d:"4 minggu", p:"Rp 480.000"},
-              {d:"3 minggu", p:"Rp 580.000"},
-              {d:"2 minggu", p:"Rp 700.000"}
+            durations: [
+              { d: "4 minggu", p: "Rp 480.000" },
+              { d: "3 minggu", p: "Rp 580.000" },
+              { d: "2 minggu", p: "Rp 700.000" }
             ]
           }
         ]
       }
     };
 
-    function renderPrices(category){
-      const container = document.getElementById("detailContent");
-      const data = PRICE_DATA[category];
-      let html = `<h2>${category}</h2><p>${data.desc}</p>`;
-      data.items.forEach(item => {
-        html += `<h3>${item.title}</h3>${item.desc}<table><tr><th>Durasi</th><th>Harga</th></tr>`;
-        item.durations.forEach(d => {
-          html += `<tr><td>${d.d}</td><td>${d.p}</td></tr>`;
-        });
-        html += `</table>`;
-      });
-      container.innerHTML = html;
-    }
-
+    // memakai renderPrices dari main.js
     renderPrices("Website & Dashboard");
   </script>
+
 </body>
 </html>
