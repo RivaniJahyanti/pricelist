@@ -90,7 +90,15 @@ function renderPrices(categoryKey){
 
   // contact buttons
   const waText = encodeURIComponent(
-    `Halo kak, saya mau konsultasi terkait ${categoryKey}. Mohon info harga & prosedur.`
+    `Halo kak, saya tertarik dengan layanan ${categoryKey}. 
+Saya ingin bertanya terkait proses pengerjaan dan apa saja yang perlu saya siapkan 
+untuk membuat layanan tersebut sesuai kebutuhan saya, yaitu:
+
+- Jenis Layanan yang saya inginkan: ……………………………….
+- Durasi pengerjaan yang saya pilih: ……………………………….
+
+Mohon bantuannya ya kak.
+`
   );
 
   html += `
